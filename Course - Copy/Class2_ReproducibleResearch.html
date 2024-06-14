@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BDS 723: Statistical Computing with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Rajesh Talluri" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide, inverse  
+count: false
+
+&lt;style&gt;
+/* @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dekko&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&amp;display=swap');
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&amp;display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&amp;display=swap');
+::selection {
+  background: #599BFFAD; /* WebKit/Blink Browsers */
+  color: #fafafa;
+}
+
+.title-slide {
+background-image: url(assets/blackboard.png);
+/*background-image: url(assets/titleback.jpg);*/
+background-size: cover;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+.intslide h1:after {
+    content: "";
+    display: block;
+    height: 40px;
+    background-image: url(assets/border.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.remark-slide-container{
+background: #444;
+}
+.remark-slide-content h1 {
+    font-size: 46px;
+    font-family: 'Walter Turncoat', cursive;
+    color: #cacaca;
+    margin-bottom:1px;
+    margin-top:20px;
+}
+.remark-slide-content {
+    font-size: 20px;
+    font-family: 'Sniglet', cursive;
+    color: #cacaca;
+}
+
+.hljs-monokai .hljs {
+	 	margin-bottom: 20px;
+    border-left: 5px solid #89c433;
+    color: #F9F2DE;
+    background-color: #363537;
+    box-shadow: inset -2px 0px 6px 2px #171515;
+}
+
+
+/* unvisited link */
+a:link {
+  color: #fafafa;
+  border-bottom: 2px solid #fafafa;
+}
+
+/* visited link */
+a:visited {
+  color: #fafafa;
+  border-bottom: 2px solid #f18787;
+
+}
+
+/* mouse over link */
+a:hover {
+  color: #fafafa;
+  border-bottom: 2px solid #f18787;
+
+}
+
+/* selected link */
+a:active {
+  color: #fafafa;
+  border-bottom: 2px solid #f18787;
+
+}
+&lt;/style&gt;
+
+&lt;img src="assets/titlepic1.png" style=""&gt;&lt;/img&gt;
+&lt;br&gt;&lt;/br&gt;
+&lt;h1 class="center" style="color: #dadada;font-size: 50px;"&gt;Class 2: Reproducible Research&lt;/h1&gt;
+
+
+
+
+
+
+---
+layout: true
+background-image: url(assets/bb2.png)
+background-size: cover
+---
+class: intslide
+# What is Quarto?
+
+
+ A reproducible authoring framework for data science, combining your code, its results, and your prose. 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+--
+
+# Why do we care about reproducible work?
+
+* In 2016, Nature conducted a survey of 1,576 researchers 
+
+* more than 70% of researchers have tried and failed to reproduce another scientist's work!
+
+* more than half have failed to reproduce their own work!!!
+
+---
+class: intslide
+# Why would you use Quarto?
+
+
+1. For communicating to decision-makers, who want to focus on the conclusions, not the code behind the analysis.&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+--
+2. For collaborating with other colleagues, who are interested in both your conclusions, and how you reached them (i.e. the code).&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+--
+3. As an environment in which to do data analysis, as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.
+
+---
+class: intslide
+
+# How do we use quarto? with R
+&lt;img src="Images/quarto_r.png" style="width: 100%;"/&gt;
+
+
+---
+class: intslide
+
+# How do we use quarto? with python
+&lt;img src="Images/quarto_python.png" style="width: 100%;"/&gt;
+
+---
+class: intslide
+# Quarto Output Formats
+.pull-left[&lt;img src="Images/quarto_output.png"  style="width: 100%;"/&gt;]
+.pull-right[Your Quarto file can be exported as a
+1. HTML
+2. PDF
+3. MS Word, ODT RTF
+4. html or Powerpoint slides
+5. Interactive webpage
+6. Website, Blog, Books
+7. Several other custom formats epubs, wikis etc
+]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+
+
+&lt;span style="font-size:0.5em;"&gt;Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.&lt;/span&gt;
+---
+class: intslide
+# Exercises
+
+1. Create a new Quarto Document.
+
+2. Create create outputs to formats: HTML, PDF and Word. (You may need to install LaTeX in order to build the PDF output)
+
+---
+class: intslide
+# Text Formatting using Markdown
+.pull-left[&lt;img src="Images/markdown.png"  style="height: 400px;"/&gt;
+]
+.pull-right[* Text formatting language
+* Include images
+* Include Equations
+* Display Tables
+
+
+ [Markdown Reference guide](https://quarto.org/docs/authoring/markdown-basics.html)
+]
+
+
+
+
+
+---
+class: intslide
+#Quarto Markdown 
+
+A .qmd file contains three important types of content:
+
+1. YAML
+
+2. Text formatting
+
+3. Code chunks
+
+---
+class: intslide
+# YAML - Yet Another Markup Language
+
+```yaml
+---
+title: "An Example Using R Markdown"
+author: "John Smith"
+date: 22/10/2016
+output: html_document
+---
+```
+[Reference](https://quarto.org/docs/output-formats/all-formats.html) for all yaml options for Quarto documents
+
+```yaml
+---
+title: "My Document"
+format: 
+  html:
+    toc: true
+    code-fold: true
+---
+```
+
+
+
+---
+class: intslide
+# Code Chunks- Languages
+
+.pull-left[R markdown supports the following and many other languages:
+
+  * Python
+  * SQL
+  * Bash
+  * Rcpp
+  * Stan
+  * JavaScript
+  * CSS
+
+To see the whole list use
+
+```r
+  names(knitr::knit_engines$get())
+```
+]
+  
+.pull-right[
+  &lt;img src="Images/knitlang1.png" /&gt;
+  ]
+  
+---
+class: intslide
+# Tables
+
+By default, R Markdown prints data with paging in the html format.
+
+Exercise : Try printing a data set.
+
+Additional Options using DT and formattable packages.
+&lt;img src="Images/formattable.png"  style="width: 850px;"/&gt;
+
+We will come back to this later.
+
+
+---
+class: intslide
+# Inline code
+
+* There is one other way to embed R code into an Quarto document: directly into the text, with: `` `r ` ``. 
+
+* This can be very useful if you mention properties of your data in the text.
+
+&gt;&lt;span style="font-size:1em;"&gt;We have data about `` `r nrow(diamonds)` `` diamonds. 
+ Only `` `r nrow(diamonds) - nrow(smaller)` `` are larger 
+than 2.5 carats. The distribution of the remainder is shown below:&lt;/span&gt;
+
+* When the report is knit, the results of these computations are inserted into the text:
+
+&gt;&lt;span style="font-size:1em;"&gt;We have data about 53940 diamonds. Only 126 are larger than 
+2.5 carats. The distribution of the remainder is shown below:&lt;/span&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "monokai",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
